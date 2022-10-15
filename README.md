@@ -22,19 +22,20 @@ ASDU page needs you to implement some awesome components where users can see inf
 
 ![](images/Image04.jpeg "Given input: 13")
 
+![](images/Image05.jpeg "Given input: 13")
 
 ## How to run the App to start?
 To start a local development server with live reloading for the **ASDU** static web page you can do it via an extension called **Live Server** or simply by opening the **index.html** file.
 
 **01.- Live Server:** For this option you have to download the extension as in the following image:
 
-![](images/Image05.jpeg "Given input: 13")
+![](images/Image06.jpeg "Given input: 13")
 
 And then the following option will appear and that's it.
 
-![](images/Image06.jpeg "Given input: 13")
+![](images/Image07.jpeg "Given input: 13")
 
 **01.- index.html:** For this option you only need to select the file from the directory as in the image and that's it.
 
-![](images/Image07.jpeg "Given input: 13")
+![](images/Image08.jpeg "Given input: 13")
 

@@ -21,9 +21,14 @@ ASDU page needs you to implement some awesome components where users can see inf
 ![](images/Image03.jpeg "Given input: 13")
 
 ![](images/Image04.jpeg "Given input: 13")
-
+```
+git clone https://github.com/ASDU0/asdu-page.git
+```
 ![](images/Image05.jpeg "Given input: 13")
-
+```
+cd asdu-page/
+code .
+```
 ## How to run the App to start?
 To start a local development server with live reloading for the **ASDU** static web page you can do it via an extension called **Live Server** or simply by opening the **index.html** file.
 
@@ -39,3 +44,27 @@ And then the following option will appear and that's it.
 
 ![](images/Image08.jpeg "Given input: 13")
 
+
+## IMPORTANT NOTES TO TAKE INTO ACCOUNT...!
+
+If you are going to take an issue, you need to create a branch from **"develop"** and for that, check which branch you are in with the following command:
+
+```
+git branch
+```
+If you're on the main branch, first switch to the **"develop branch"** with the following command and check again:
+```
+git checkout develop
+git branch
+```
+![](images/Image09.jpeg "Given input: 13")
+
+Now, being in the **"develop"** branch, you must create a new branch where you can make the issue with the following command line:
+
+```
+git branch <name_of_your_branch>
+git checkout <name_of_your_branch>
+```
+![](images/Image10.jpeg "Given input: 13")
+
+When you see that you are in your branch created as in the image you can work there, good luck...!

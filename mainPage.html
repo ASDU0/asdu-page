@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main Page</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+    :root {
+      font-size: 62.5%;
+      --white: white;
+      --color-bg1: #25282f;
+      --color-bg2: rgba(61, 69, 85, 0.489583);
+      --color-bg3: rgba(84, 96, 122, 0);
+      --almost-white: #d9d9d9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .logo {
+      width: 15.7rem;
+      height: 15.7rem;
+    }
+
+    .uppercase-font {
+      font-style: normal;
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: 2rem;
+      line-height: 3rem;
+      color: var(--white);
+    }
+
+    .colored-background {
+      background: linear-gradient(123.96deg, var(--color-bg1) 29.88%, var(--color-bg2) 99.21%, var(--color-bg3) 118.63%);
+      padding: 2rem 0 9.6rem 0;
+    }
+
+    .feature {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .features {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 13rem;
+    }
+
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .icon {
+      font-size: 3rem;
+    }
+
+    .section-icons {
+      background-color: var(--white) !important;
+    }
+
+    .stack-icons {
+      padding: 5.4rem 13rem 7.4rem 13rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/0ce73c7095.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div>
+    <div class="colored-background">
+      <div class="main-content">
+        <img src="./images/asdu.png" alt="asdu-alternative-logo" class="logo">
+
+        <p class="uppercase-font">
+          asdu in numbers
+        </p>
+
+        <div class="features">
+          <div class="feature">
+            <img src="./images/timer.svg" alt="timer image">
+            <p class="uppercase-font">2</p>
+            <p class="uppercase-font">months</p>
+          </div>
+
+          <div class="feature">
+            <img src="./images/settings.svg" alt="projects image">
+            <p class="uppercase-font">3</p>
+            <p class="uppercase-font">projects</p>
+          </div>
+
+          <div class="feature">
+            <img src="./images/persons.svg" alt="persons image">
+            <p class="uppercase-font">22</p>
+            <p class="uppercase-font">members</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-icons">
+      <div class="stack-icons">
+        <i class="fa-brands fa-html5 icon"></i>
+        <i class="fa-brands fa-css3-alt icon"></i>
+        <i class="fa-brands fa-js icon"></i>
+        <i class="fa-brands fa-node-js icon"></i>
+        <i class="fa-brands fa-python icon"></i>
+        <i class="fa-brands fa-react icon"></i>
+        <i class="fa-brands fa-vuejs icon"></i>
+        <i class="fa-brands fa-angular icon"></i>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

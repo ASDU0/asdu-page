@@ -6,24 +6,35 @@
     <link rel="stylesheet" type="text/css" href="/styles/style.css">
 </head>
 <body>
-    <header class="container_header">
-        <img
-            src="../img/asdu_logo.png"
-            alt="logo asdu"
-            class="container_header_img"
-        > 
-        <ul  class="container_header_items">
-            <li class="container_header_items_item">Nosotros</li>
-            <li class="container_header_items_item">Vision</li>
-            <li class="container_header_items_item">Mision</li>
-            <li class="container_header_items_item">Proyectos</li>
-            <li class="container_header_items_item">Contacto</li>
-        </ul>
-    </header>
-    <h1>Bienvenido a mi página web</h1>
-    <p id="message">Haz clic en el botón para cambiar el mensaje</p>
-    <button id="changeButton">CHANGE Mensaje</button>
-
+    <div class="container_home">
+        <header class="container_header">
+            <img src="../img/asdu_logo.png" alt="logo asdu" class="container_header_img" onclick="window.location.href='/'">
+            <ul class="container_header_items">
+                <li class="container_header_items_item">
+                    <a class="container_header_items_item_a" href="#">Nosotros</a>
+                </li>
+                <li class="container_header_items_item">
+                    <a class="container_header_items_item_a" href="#">Vision</a>
+                </li>
+                <li class="container_header_items_item">
+                    <a class="container_header_items_item_a" href="#">Mision</a>
+                </li>
+                <li class="container_header_items_item">
+                    <a class="container_header_items_item_a" href="#">Proyectos</a>
+                </li>
+                <li class="container_header_items_item">
+                    <a class="container_header_items_item_a" href="#">Contacto</a>
+                </li>
+            </ul>
+        </header>
+        <main>
+            <!-- <h1>Bienvenido a mi página web</h1>
+                <p id="message">Haz clic en el botón para cambiar el mensaje</p>
+                <button id="changeButton">CHANGE Mensaje</button> -->
+        </main>
+    </div>
+    
+    
     <script src="/scripts/script.js"></script>
 </body>
 </html>

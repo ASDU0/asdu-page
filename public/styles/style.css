@@ -1,8 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+
+
 body {
+
     text-align: center;
-    font-family: 'Roboto',
-        sans-serif;
+    font-family: 'Roboto',sans-serif;
+    margin: 0;
+    
+}
+.container_home{
+    background-image: linear-gradient(to bottom right, #25282F, #25282F, #798293, #fff);
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
@@ -23,11 +35,11 @@ button {
     cursor: pointer;
 }
 
-
 /* HEADER */
 .container_header{
     width: 100%;
     min-height: 10vh;
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -39,13 +51,18 @@ button {
     padding: 12px 16px;
     max-width: 250px;
     padding-left: 35px;
+    cursor: pointer;
+    transition: 0.3s ease-in all;
+    &:hover{
+        transform: scale(1.1);
+    }
 }
 .container_header_items{
     display: flex;
     gap: 25px;
     padding: 9px 12px;
-    padding-right: 30px;
-    font-weight: bolder;
+    margin-right: 60px;
+    font-weight: 600;
     
 }
 .container_header_items_item{
@@ -56,6 +73,17 @@ button {
         opacity: 0.7;
     }
 }
+.container_header_items_item_a{
+    text-decoration: none;
+    border: 0;
+    color: white;
+    letter-spacing: 1.5px;
+}
+/* This is the main*/
+main{
+    padding-top:10vh ;
+}
+
 
 @media (max-width: 767px) {
     .container_header_img{
@@ -70,4 +98,16 @@ button {
         font-size: 0.9em;
         
     }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .container_header_items {
+            gap: 8;
+            padding: 9px 9px;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            font-size: 0.8em;
+            margin-right: 20px;
+    
+        }
 }

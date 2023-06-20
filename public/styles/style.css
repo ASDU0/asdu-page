@@ -94,7 +94,124 @@ main{
 .space-dead{
     height: 100vh;
 }
+/* FOOTER */
+footer{
+    width: 100%;
+}
+.container_footer{
+    background-color: #25282F;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding-bottom: 20px;
+    color: white;
+    
+}
+.container_footer_asesor {
+    padding-left: 66px;
+}
+.container_footer_asesor_titulo{
+    font-size: 2.2em;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.container_footer_asesor_img{
+    width: 80%;
+}
+.container_footer_info{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    max-width: 500px;
+    width: auto;
+}
+.container_footer_segundo{
+    width: 100%;
+    background-color: #C6312B;
+    color: white;
+    min-height: 10vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        /* Columnas responsivas */
+    grid-gap: 20px;
+}
+.container_footer_segundo_item{
+    padding: 22px;
+    padding-left: 31px
+}
+.container_footer_segundo_titulo{
+    font-size: 1.3em;
+    font-weight: 600;
+    position: relative;
+    display: inline;
+}
+.container_footer_segundo_titulo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 120%;
+    height: 2px;
+    background-color: #fff;
 
+}
+.container_footer_segundo_item_spc{
+    margin-top: 11px;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    
+}
+.container_footer_segundo_parrafos{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.6;
+    }
+}
+.container_footer_segundo_item_redes{
+    height: 100px;
+    padding:22px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-wrap: wrap;
+    gap: 11px;
+    
+}
+.container_footer_segundo_item_redes_item{
+    text-decoration: none;
+    &:hover {
+            opacity: 0.7;
+        }
+}
+.container_footer_segundo_item_follow{
+    font-size: 3em;
+    font-weight: bolder;
+}
+.container_footer_tercero{
+    color: white;
+    text-align: center;
+    background-color: #C6312B;
+    width: 100%;
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+.container_footer_tercero_direc{
+    padding: 11px;
+    text-align: center;
+    font-size: 1.8em;
+    letter-spacing: 1px;
+}
+.container_footer_tercero_hr{
+    width: 60%;
+    
+}
+.container_footer_tercero_der{
+    padding: 11px;
+    font-size: 1.2em;
+}
 
 @media (max-width: 767px) {
     .container_header_img{
@@ -109,6 +226,17 @@ main{
         width: 100%;
         font-size: 0.9em;
         
+    }
+    .container_footer{
+        grid-template-columns: 1fr;
+        padding-left: 0;
+    }
+    .container_footer_asesor{
+        padding-left: 22px;
+    }
+    .container_footer_info{
+        padding-left: 22px;
+        padding-right: 16px;
     }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {

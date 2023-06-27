@@ -1,0 +1,17 @@
+{
+  "name": "asdu-page",
+  "version": "1.0.0",
+  "description": "ASDU is a new platform for the Software Development study group, it describes us personally and our interests. The main objective is to help users find information about what we are and what we do.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  }
+}

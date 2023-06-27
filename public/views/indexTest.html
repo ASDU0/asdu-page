@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Members ASDU</title>
+        <link rel="stylesheet" href="/styles/styles.css">
+        <!-- Libreria para iconos -->
+        <script src="https://kit.fontawesome.com/797548a217.js" crossorigin="anonymous"></script>
+        <script src="/scripts/script.js"></script>
+
+
+    </head>
+    <body>
+
+        <div class="color-stripe"></div>
+
+        <div class="card-container" id="cardContainer"></div>
+
+        <script>
+            // Función para crear las tarjetas dinámicamente
+
+            
+            // Carga los datos desde el archivo JSON
+            fetch("/views/data_members.json")
+                .then(response => response.json())
+                .then(data => createCards(data))
+                .catch(error => console.error("Error al cargar los datos:", error));
+
+  
+        </script>
+
+
+    </body>
+</html>

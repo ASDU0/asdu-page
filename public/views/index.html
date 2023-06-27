@@ -3,115 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/styles/styleRoswell.css">
     <link rel="stylesheet" type="text/css" href="/styles/style.css">
+    <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+    <script src="https://kit.fontawesome.com/797548a217.js" crossorigin="anonymous"></script>
+
+    <script src="/scripts/script.js"></script>
+
+    <script>
+        // Función para crear las tarjetas dinámicamente
+
+
+        // Carga los datos desde el archivo JSON
+        fetch("/views/data_members.json")
+            .then(response => response.json())
+            .then(data => createCards(data))
+            .catch(error => console.error("Error al cargar los datos:", error));
+
+
+    </script>
 </head>
 <body>
-    <div class="container_home">
-        <header class="container_header" id="main-header">
-            <img src="../img/asdu_logo.png" alt="logo asdu" class="container_header_img" onclick="window.location.href='/'">
-            <ul class="container_header_items">
-                <li class="container_header_items_item">
-                    <a class="container_header_items_item_a" href="#">Nosotros</a>
-                </li>
-                <li class="container_header_items_item">
-                    <a class="container_header_items_item_a" href="#">Vision</a>
-                </li>
-                <li class="container_header_items_item">
-                    <a class="container_header_items_item_a" href="#">Mision</a>
-                </li>
-                <li class="container_header_items_item">
-                    <a class="container_header_items_item_a" href="#">Proyectos</a>
-                </li>
-                <li class="container_header_items_item">
-                    <a class="container_header_items_item_a" href="#">Contacto</a>
-                </li>
-            </ul>
-        </header>
-        <main>
-            <!-- <h1>Bienvenido a mi página web</h1>
-                <p id="message">Haz clic en el botón para cambiar el mensaje</p>
-                <button id="changeButton">CHANGE Mensaje</button> -->
-        </main>
-    </div>
-    <footer>
-        <div class="container_footer">
-            <div class="container_footer_asesor">
-                <h2 class="container_footer_asesor_titulo">Nuestro Asesor</h2>
-                <img src="../img/asesor.png" alt="asesor" class="container_footer_asesor_img">
-                <div class="container_footer_asesor_info">
-                    <h2>Wilian Zamalloa Paro</h2>
-                    <p>Magister informatico</p>
+<div class="container_home">
+    <header class="container_header" id="main-header">
+        <img src="../img/asdu_logo.png" alt="logo asdu" class="container_header_img" onclick="window.location.href='/'">
+        <ul class="container_header_items">
+            <li class="container_header_items_item">
+                <a class="container_header_items_item_a" href="#">Nosotros</a>
+            </li>
+            <li class="container_header_items_item">
+                <a class="container_header_items_item_a" href="#">Vision</a>
+            </li>
+            <li class="container_header_items_item">
+                <a class="container_header_items_item_a" href="#">Mision</a>
+            </li>
+            <li class="container_header_items_item">
+                <a class="container_header_items_item_a" href="#">Proyectos</a>
+            </li>
+            <li class="container_header_items_item">
+                <a class="container_header_items_item_a" href="#">Contacto</a>
+            </li>
+        </ul>
+    </header>
+    <main>
+        <div>
+            <div class="colored-background">
+                <div class="main-content">
+                    <img src="/img/asdu.png" alt="asdu-alternative-logo" class="logo">
+
+                    <p class="uppercase-font">
+                        asdu in numbers
+                    </p>
+
+                    <div class="features">
+                        <div class="feature">
+                            <img src="/img/timer.svg" alt="timer image">
+                            <p class="uppercase-font">2</p>
+                            <p class="uppercase-font">months</p>
+                        </div>
+
+                        <div class="feature">
+                            <img src="/img/settings.svg" alt="projects image">
+                            <p class="uppercase-font">3</p>
+                            <p class="uppercase-font">projects</p>
+                        </div>
+
+                        <div class="feature">
+                            <img src="/img/persons.svg" alt="persons image">
+                            <p class="uppercase-font">22</p>
+                            <p class="uppercase-font">members</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="container_footer_info">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae officia natus laboriosam quis. Labore sint, pariatur,
-                odit totam impedit incidunt quam in, corrupti amet quia rerum ratione magnam sed perferendis.
-                Iste ipsum accusantium unde? Laborum commodi iusto dignissimos. Possimus, ab nisi quae suscipit cupiditate dolorum
-                in a, ullam culpa laudantium necessitatibus molestias sint iure accusantium eos earum eius. Non, exercitationem!
-            </div>
-        </div>
-        
-        <div class="container_footer_segundo">
-            <div class="container_footer_segundo_item">
-                <p class="container_footer_segundo_titulo">SOBRE ASDU</p>
-                <div class="container_footer_segundo_item_spc">
-                    <a href="#" class="container_footer_segundo_parrafos">Nosotros</a>
-                    <a href="#" class="container_footer_segundo_parrafos">Mision</a>
-                    <a href="#" class="container_footer_segundo_parrafos">Vision</a>
-                    <a href="#" class="container_footer_segundo_parrafos">Miembros</a>
-                    <a href="#" class="container_footer_segundo_parrafos">Asesor</a>
+
+            <div class="section-icons">
+                <div class="stack-icons">
+                    <i class="fa-brands fa-html5 icon" style="color: #8d8b8b;"></i>
+                    <i class="fa-brands fa-css3-alt icon" style="color: #8d8b8b;"></i>
+                    <i class="fa-brands fa-js icon" style="color: #8d8b8b;"></i>
+                    <i class="fa-brands fa-node-js icon" style="color: #8d8b8b;"></i>
+                    <i class="fa-brands fa-python icon" style="color: #8d8b8b;"></i>
+                    <i class="fa-brands fa-react icon" style="color: #8d8b8b;"></i>
+                    <i class="fa-brands fa-vuejs icon" style="color: #8d8b8b;"></i>
+                    <i class="fa-brands fa-angular icon" style="color: #8d8b8b;"></i>
                 </div>
             </div>
-            <div class="container_footer_segundo_item">
-                <p class="container_footer_segundo_titulo">PROYECTOS</p>
-                <div class="container_footer_segundo_item_spc">
-                    <a href="#" class="container_footer_segundo_parrafos">Proyecto 1</a>
-                    <a href="#" class="container_footer_segundo_parrafos">Proyecto 2</a>
-                    <a href="#" class="container_footer_segundo_parrafos">Proyecto 3</a>
-                </div>
-            </div>
-            <div class="container_footer_segundo_item">
-                <p class="container_footer_segundo_titulo">CONTACTOS</p>
-                <div class="container_footer_segundo_item_spc">
-                    <a href="#" class="container_footer_segundo_parrafos">Correo</a>
-                    <a href="#" class="container_footer_segundo_parrafos">Whatsaap</a>
-                    <a href="#" class="container_footer_segundo_parrafos">Proyecto 3</a>
-                </div>
-            </div>
-            <div class="container_footer_segundo_item">
-                <div class="container_footer_segundo_item_redes">
-                    <a class="container_footer_segundo_item_redes_item" href="#">
-                        <img src="../img/github.png" alt="github">
-                    </a>
-                    <a class="container_footer_segundo_item_redes_item" href="#">
-                        <img src="../img/facebook.png" alt="github">
-                    </a>
-                    <a class="container_footer_segundo_item_redes_item" href="#">
-                        <img src="../img/instagram.png" alt="github">
-                    </a>
-                    <a class="container_footer_segundo_item_redes_item" href="#">
-                        <img src="../img/twitter.png" alt="github">
-                    </a>
-                    <a class="container_footer_segundo_item_redes_item" href="#">
-                        <img src="../img/youtube.png" alt="github">
-                    </a>
-                </div>
-                <div class="container_footer_segundo_item_follow">
-                    Follow Us!!
-                </div>
-            </div>
-           
         </div>
 
-        <div class="container_footer_tercero">
-            <p class="container_footer_tercero_direc">Av. De la Cultura, Nro. 733 Cusco – Perú</p>
-            <hr class="container_footer_tercero_hr">
-            <p class="container_footer_tercero_direc">©2023 ASDU, Perú. Todos los derechos reservados</p>
+    </main>
+</div>
+
+
+<!-- users -->
+<div class="color-stripe"></div>
+
+<div class="card-container" id="cardContainer"></div>
+
+<!--    footer-->
+<footer>
+    <div class="container_footer">
+        <div class="container_footer_asesor">
+            <h2 class="container_footer_asesor_titulo">Nuestro Asesor</h2>
+            <img src="../img/asesor.png" alt="asesor" class="container_footer_asesor_img">
+            <div class="container_footer_asesor_info">
+                <h2>Wilian Zamalloa Paro</h2>
+                <p>Magister informatico</p>
+            </div>
         </div>
-    </footer>
-    
-    
-    
-    <script src="/scripts/script.js"></script>
+        <div class="container_footer_info">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae officia natus laboriosam quis. Labore sint,
+            pariatur,
+            odit totam impedit incidunt quam in, corrupti amet quia rerum ratione magnam sed perferendis.
+            Iste ipsum accusantium unde? Laborum commodi iusto dignissimos. Possimus, ab nisi quae suscipit cupiditate
+            dolorum
+            in a, ullam culpa laudantium necessitatibus molestias sint iure accusantium eos earum eius. Non,
+            exercitationem!
+        </div>
+    </div>
+
+    <div class="container_footer_segundo">
+        <div class="container_footer_segundo_item">
+            <p class="container_footer_segundo_titulo">SOBRE ASDU</p>
+            <div class="container_footer_segundo_item_spc">
+                <a href="#" class="container_footer_segundo_parrafos">Nosotros</a>
+                <a href="#" class="container_footer_segundo_parrafos">Mision</a>
+                <a href="#" class="container_footer_segundo_parrafos">Vision</a>
+                <a href="#" class="container_footer_segundo_parrafos">Miembros</a>
+                <a href="#" class="container_footer_segundo_parrafos">Asesor</a>
+            </div>
+        </div>
+        <div class="container_footer_segundo_item">
+            <p class="container_footer_segundo_titulo">PROYECTOS</p>
+            <div class="container_footer_segundo_item_spc">
+                <a href="#" class="container_footer_segundo_parrafos">Proyecto 1</a>
+                <a href="#" class="container_footer_segundo_parrafos">Proyecto 2</a>
+                <a href="#" class="container_footer_segundo_parrafos">Proyecto 3</a>
+            </div>
+        </div>
+        <div class="container_footer_segundo_item">
+            <p class="container_footer_segundo_titulo">CONTACTOS</p>
+            <div class="container_footer_segundo_item_spc">
+                <a href="#" class="container_footer_segundo_parrafos">Correo</a>
+                <a href="#" class="container_footer_segundo_parrafos">Whatsaap</a>
+                <a href="#" class="container_footer_segundo_parrafos">Proyecto 3</a>
+            </div>
+        </div>
+        <div class="container_footer_segundo_item">
+            <div class="container_footer_segundo_item_redes">
+                <a class="container_footer_segundo_item_redes_item" href="#">
+                    <img src="../img/github.png" alt="github">
+                </a>
+                <a class="container_footer_segundo_item_redes_item" href="#">
+                    <img src="../img/facebook.png" alt="github">
+                </a>
+                <a class="container_footer_segundo_item_redes_item" href="#">
+                    <img src="../img/instagram.png" alt="github">
+                </a>
+                <a class="container_footer_segundo_item_redes_item" href="#">
+                    <img src="../img/twitter.png" alt="github">
+                </a>
+                <a class="container_footer_segundo_item_redes_item" href="#">
+                    <img src="../img/youtube.png" alt="github">
+                </a>
+            </div>
+            <div class="container_footer_segundo_item_follow">
+                Follow Us!!
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container_footer_tercero">
+        <p class="container_footer_tercero_direc">Av. De la Cultura, Nro. 733 Cusco – Perú</p>
+        <hr class="container_footer_tercero_hr">
+        <p class="container_footer_tercero_direc">©2023 ASDU, Perú. Todos los derechos reservados</p>
+    </div>
+</footer>
+
+
 </body>
 </html>

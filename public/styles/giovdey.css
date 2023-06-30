@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500;700;900&family=Poppins:wght@500;600;700;900&display=swap');
+
+.container_imagen_text{
+    margin: 50px 0%;
+    height: 70vh;
+    background-image: linear-gradient(120deg, #34e0956c 0%, #34e0955c 100%),url(../img/fondo.png);
+    background-repeat:no-repeat ;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    box-shadow: 5px 2px 5px 5px rgba(0, 0, 0, 0.20);
+}
+.container_imagen_text h1{
+    padding:0 27%; 
+    font-family: 'Poppins';
+    color: #FFFF;
+    font-size: 40px;
+    font-weight:700;   
+}
+
+
+.proyectTitle h1{
+    font-family: 'Poppins';
+    font-size: 35px;
+    font-weight: 500;
+    margin:90px 0px 90px 96px;
+}
+
+.card-slider{
+    background-position: center;
+    background-color: #B90909;
+    width: 376px;
+    height: 286px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #FFFF;
+    margin: 0% 10px;
+    border: 1px solid black;
+}
+.card-IMAGE img{
+    width: 145px;
+    height: 130px;
+}
+
+.card-name h1{
+    font-family: 'Poppins';
+    font-size: 30px;
+    font-weight: 500;
+    color: #FFFF;
+}
+
+.swiper-wraper{
+    width: 100%;
+    display: flex;
+    justify-content: center
+}

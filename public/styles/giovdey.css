@@ -32,13 +32,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 900px;
+    /* height: 300px; */
+    /* border: 1px solid black; */
+    overflow-x: hidden;
 }
 .cardsProyects{
-    overflow-x: hidden;
+    
     justify-content: center;
-    max-width: 1200px;
+    max-width: 900px;
     height: 300px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    overflow-x: hidden;
 
 }
 .card-slider{

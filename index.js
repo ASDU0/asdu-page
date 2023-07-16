@@ -6,13 +6,13 @@ const path=require('path');
 
 const port=8000;
 
-app.use(express.static('public'));
+app.use(express.static('docs'));
 app.get('/',(req,res)=>{
-    res.sendFile(path.join(__dirname,'/public/views/index.html'))
+    res.sendFile(path.join(__dirname,'/docs/index.html'))
 })
 
 // app.get('/about',(req,res)=>{
-//     res.sendFile(path.join(__dirname,'/public/views/about.html'))
+//     res.sendFile(path.join(__dirname,'/docs/views/about.html'))
 // })
 
 app.listen(port,(err)=>{

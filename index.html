@@ -1,20 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="index.css">
-    <script src="index.js">
-    </script>
-    
-    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Members ASDU</title>
+        <link rel="stylesheet" href="styles.css">
+        <!-- Libreria para iconos -->
+        <script src="https://kit.fontawesome.com/797548a217.js" crossorigin="anonymous"></script>
 
-</head>
-<body>
-    <h1>fjsdfijsdf</h1>
+        <script src="index.js">
+        </script>
+
+
+    </head>
+    <body>
+
+        <div class="color-stripe"></div>
+
+        <div class="card-container" id="cardContainer"></div>
+
+        <script>
+            // Función para crear las tarjetas dinámicamente
+            function createCards(data) {
+                const cardContainer = document.getElementById("cardContainer");
+            
+                data.forEach(cardData => {
+                const cardElement = document.createElement("div");
+                cardElement.className = "cards";
+            
+                const imageElement = document.createElement("div");
+                imageElement.className = "image";
+                const image = new Image();
+            
+                // Cargar la imagen de forma síncrona
+                image.onload = function() {
+                    imageElement.appendChild(image);
+                };
+            
+                // Manejar errores de carga de la imagen
+                image.onerror = function() {
+                    console.error("Error al cargar la imagen:", cardData.imageSrc);
+                };
+            
+                image.src = cardData.imageSrc;
+                cardElement.appendChild(imageElement);
+            
+                const nameElement = document.createElement("div");
+                nameElement.className = "name";
+                const name = document.createElement("h2");
+                name.textContent = cardData.name;
+                nameElement.appendChild(name);
+                cardElement.appendChild(nameElement);
+            
+                const positionElement = document.createElement("div");
+                positionElement.className = "position";
+                const position = document.createElement("h4");
+                position.textContent = cardData.position;
+                positionElement.appendChild(position);
+                cardElement.appendChild(positionElement);
+            
+                const descriptionElement = document.createElement("div");
+                descriptionElement.className = "des";
+                const description = document.createElement("p");
+                description.textContent = cardData.description;
+                descriptionElement.appendChild(description);
+            
+                const iconContainer = document.createElement("div");
+                iconContainer.className = "icon-container";
+                
+                
+                cardData.icons.forEach(icon => {
+                    const link = document.createElement("a");
+                    link.href = icon.link;
+                    const iconElement = document.createElement("i");
+                
+                    // Asignar la clase de icono correspondiente según el tipo
+                    switch (icon.type) {
+                    case "github":
+                        iconElement.className = "fa-brands fa-github fa-2xl";
+                        break;
+                    case "facebook":
+                        iconElement.className = "fa-brands fa-facebook fa-2xl";
+                        break;
+                    case "instagram":
+                        iconElement.className = "fa-brands fa-square-instagram fa-2xl";
+                        break;
+                    case "whatsapp":
+                        iconElement.className = "fa-brands fa-whatsapp fa-2xl";
+                        break;
+                    default:
+                        // Si el tipo de icono no coincide con ninguno de los casos anteriores, se usa un icono predeterminado
+                        iconElement.className = "fas fa-external-link-alt fa-2x";
+                        break;
+                    }
+                
+                    link.appendChild(iconElement);
+                    iconContainer.appendChild(link);
+                });
+                
+                              
+                descriptionElement.appendChild(iconContainer);
+                cardElement.appendChild(descriptionElement);
+            
+                cardContainer.appendChild(cardElement);
+                });
+            }
+            
+            // Carga los datos desde el archivo JSON
+            fetch("data_members.json")
+                .then(response => response.json())
+                .then(data => createCards(data))
+                .catch(error => console.error("Error al cargar los datos:", error));
+
   
-    <h2>fkdhsfdlskfj</h2>
-</body>
+        </script>
+
+        <div class="gallery">
+            <div class="gallery-container">
+                <img class="gallery-item gallery-item-1" src="imagesProjets/project1.jpeg" data-index="1">
+                <img class="gallery-item gallery-item-2" src="imagesProjets/project2.jpeg" data-index="2">
+                <img class="gallery-item gallery-item-3" src="imagesProjets/project3.jpeg" data-index="3">
+                <img class="gallery-item gallery-item-4" src="imagesProjets/project4.jpeg" data-index="4">
+                <img class="gallery-item gallery-item-5" src="imagesProjets/project5.jpeg" data-index="5">
+
+            </div>
+
+            <div class="gallery-controls"></div>
+        </div>
+        <script src="script.js"></script>
+
+    </body>
 </html>

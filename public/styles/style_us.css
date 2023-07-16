@@ -1,0 +1,154 @@
+
+/* INICIO */
+
+.container_about_us{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: 120%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: -1;
+}
+
+.container_about_us::before{
+    content: "";
+    background-image: url("../img/iinfo_unsaac.png");
+    background-size:cover;
+    background-position: center;
+    filter: blur(3px) grayscale(1) opacity(70%);
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    
+}
+
+.container_about_us_nosotros{
+    position: relative;
+    color: white;
+    width: 450px;
+    padding: 120px;
+    text-align: left;
+    align-items: center;
+    justify-items: center;
+}
+
+.tittle_Nosotros{
+    font-size: 40px;
+    font-weight: bolder;
+    border-top: 400px;
+    padding-top: 40%;
+    padding-bottom: 20%;
+}
+
+.us_content{
+    padding-top: 15%;
+    font-size: 18px;
+    color: white;
+    width: 660px;
+    font-weight: bolder;
+    line-height: 150%;
+}
+
+.imagen_extra{
+    background-image: url("../img/iinfo_unsaac.png");
+    background-size: 1350px;
+    background-position: right;
+    clip-path: polygon(0 20%, 100% 20%, 100% 90%, 0 90%);
+}
+
+
+
+/* OTROS */
+
+
+.container_MVsion{
+    height: 150%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.mision_section{
+    display: grid;
+    grid-template-rows: 4fr 5fr 10fr;
+}
+
+.mision_title{
+    font-size: 200%;
+    text-align: center;
+    padding-top: 5%;
+    
+}
+
+#mision_content{
+    text-align: center;
+    padding-left: 25%;
+    padding-right: 25%;
+
+}
+
+#mision_content_par{
+    padding: 2%;
+    font-size: 170%;
+}
+
+#mision_image{
+    display: flex;
+    justify-content: center;
+}
+
+.mision_image_content{
+    margin-top: 80px;
+    border-radius: 10%;
+    max-width: 70%;
+    max-height: 70%;
+}
+
+.vision_section{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+#vision_title{
+    font-size: 200%;
+    position: relative;
+    width: 450px;
+    padding-left: 120px;
+    padding-top: 120px;
+    padding-bottom: 40px;
+    text-align: left;
+    align-items: center;
+    justify-items: center;
+}
+
+#vision_content{
+    font-size: 160%;
+    padding-left: 120px;
+    padding-right: 50px;
+    text-align: left;
+    align-items: center;
+    justify-items: center;
+    padding-bottom: 15%;
+}
+
+#vision_content_par{
+    padding-top: 2%;
+}
+
+#vision_image{
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+.vision_image_content{
+    margin-top: 150px;
+    border-radius: 10%;
+    max-width: 65%;
+    max-height: 65%;
+}

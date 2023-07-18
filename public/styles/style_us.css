@@ -143,7 +143,6 @@
 #vision_image{
     display: flex;
     justify-content: center;
-    z-index: 1;
 }
 
 .vision_image_content{

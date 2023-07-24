@@ -62,8 +62,15 @@
     /* border: 1px solid black; */
 }
 .card-IMAGE img{
-    width: 145px;
+    width: 130px;
     height: 130px;
+}
+.proyectosLinks{
+    margin: 5px;
+}
+.proyectosLinks a{
+    margin: 3px;
+    color: #FFF;
 }
 
 .card-name h1{

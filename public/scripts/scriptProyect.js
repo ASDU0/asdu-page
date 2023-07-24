@@ -1,26 +1,33 @@
 
 const dataProjects=[
     {
-        image:"../img/image48.png",
-        name:'PROYECTO 1',
-        color:'B90909'
+        image:"../img/Proyecto1.png",
+        name:'Clone Airbnb',
+        color:'black',
+        linkProyecto:"https://clone-airbnb-proyect.vercel.app/",
+        linkGit:"https://github.com/ASDU0/Proyecto-Vivencial-Front-End"
+
     },
     {
-        image:"../img/image49.png",
-        name:'PROYECTO 2',
-        color:'#052b3b'
+        image:"../img/Proyecto2.png",
+        name:'Clone Messenger',
+        color:'#4290cb',
+        linkProyecto:"https://messenger-clone-next-js-13.vercel.app/",
+        linkGit:""
     },
     {
         image:"../img/image50.png",
         name:'PROYECTO 3',
-        color:'#101a1b'
+        color:'#101a1b',
+        linkProyecto:"",
+        linkGit:""
     }
 ]
 
 const cardProyects=document.querySelector('.cardsProyects');
 
 const postMethods=()=>{
-    dataProjects.map(({name,image,color})=>{
+    dataProjects.map(({name,image,color,linkGit,linkProyecto})=>{
         
         const postElement=document.createElement('div');
         postElement.classList.add('card-slider');
@@ -30,6 +37,10 @@ const postMethods=()=>{
             </div>
             <div class="card-name">
                 <h1>${name}</h1>
+            </div>
+            <div class="proyectosLinks">
+                <a href=${linkGit}><i class="fa-brands fa-github fa-2xl"></i></a>
+                <a href=${linkProyecto}><i class="fa fa-globe fa-2xl"></i></a>
             </div>
         `;
         // console.log(postElement)

@@ -3,7 +3,7 @@ const dataProjects=[
     {
         image:"../img/Proyecto1.png",
         name:'Clone Airbnb',
-        color:'black',
+        color:'#ff5a5f',
         linkProyecto:"https://clone-airbnb-proyect.vercel.app/",
         linkGit:"https://github.com/ASDU0/Proyecto-Vivencial-Front-End"
 
@@ -16,10 +16,10 @@ const dataProjects=[
         linkGit:""
     },
     {
-        image:"../img/image50.png",
-        name:'PROYECTO 3',
-        color:'#101a1b',
-        linkProyecto:"",
+        image:"../img/Proyecto3.png",
+        name:'Schedule Unsaac',
+        color:'#ffb300',
+        linkProyecto:"https://schedule-unsaac.netlify.app/",
         linkGit:""
     }
 ]
@@ -54,7 +54,7 @@ let items=document.querySelectorAll('.cardsProyects .card-slider');
 let next=document.getElementById('next');
 let prev=document.getElementById('prev');
 
-let active=0;
+let active=2;
 function loadShow(){
     let stt=0;
     items[active].style.transform=`none`;

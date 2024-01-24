@@ -1,1 +1,20 @@
-
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: asdu-app
+  namespace: general-webs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: asdu-app
+  template:
+    metadata:
+      labels:
+        app: asdu-app
+    spec:
+      containers:
+        - name: asdu-app-container
+          image: localhost:5000/asdu-app:IMAGE_VERSION
+          ports:
+            - containerPort: 80

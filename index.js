@@ -7,7 +7,7 @@ const path=require('path');
 const port=8000;
 
 app.use(express.static('public'));
-app.get('/asdu',(req,res)=>{
+app.get('/',(req,res)=>{
     res.sendFile(path.join(__dirname,'/public/views/index.html'))
 })
 

@@ -18,3 +18,5 @@ spec:
           image: localhost:5000/asdu-app:IMAGE_VERSION
           ports:
             - containerPort: 80
+
+            

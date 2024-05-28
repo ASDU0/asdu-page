@@ -25,12 +25,60 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Install sshpass
+        run: sudo apt-get install -y sshpass
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Set image version
+        id: set_version
+        run: echo "IMAGE_VERSION=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+        
+      - name: Build Docker image
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          cd Backend/Tutoria.Services.SecurityAPI
+          docker build -t localhost:5000/tutoria-services-security:${{ env.IMAGE_VERSION }} .
+          
+      - name: Save Docker image to tar file
+        run: docker save -o security.tar localhost:5000/tutoria-services-security:${{ env.IMAGE_VERSION }}
+
+      - name: Transfer image to server
+        env:
+          SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+        run: |
+          sshpass -p "$SSH_PASSWORD" scp -o StrictHostKeyChecking=no security.tar $SSH_USER@$SERVER_IP:/home/ppp/devops/pipeline/
+
+      - name: Copy deployment.yml to server
+        env:
+          SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+        run: |
+          cd Backend/Tutoria.Services.SecurityAPI
+          sed 's/IMAGE_VERSION/${{ env.IMAGE_VERSION }}/g' 06-deployment-service-security.yaml > deployment-security-api.yaml
+          sshpass -p "$SSH_PASSWORD" scp -o StrictHostKeyChecking=no deployment-security-api.yaml $SSH_USER@$SERVER_IP:/home/ppp/devops/pipeline/
+
+      - name: Connect to server and rebuild Docker image
+        env:
+          SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+        run: |
+          sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no $SSH_USER@$SERVER_IP 'cd /home/ppp/devops/pipeline && docker load -i security.tar'
+
+      - name: Connect to server and push Docker image to local registry
+        env:
+          SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+        run: |
+          sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no $SSH_USER@$SERVER_IP 'docker push localhost:5000/tutoria-services-security:${{ env.IMAGE_VERSION }}'
+
+      - name: Connect to server and apply deployment
+        env:
+          SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+        run: |
+          sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no $SSH_USER@$SERVER_IP 'cd /home/ppp/devops/pipeline && kubectl apply -f deployment-security-api.yaml'
+    

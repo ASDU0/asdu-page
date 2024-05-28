@@ -7,6 +7,7 @@ COPY . .
 
 RUN npm install
 
-EXPOSE 3000  # Asegúrate de que coincida con el puerto en tu aplicación Express.js
+# Asegúrate de que coincida con el puerto en tu aplicación Express.js
+EXPOSE 3000
 
 CMD ["npm", "start"]

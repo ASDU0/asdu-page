@@ -8,6 +8,6 @@ COPY . .
 RUN npm install
 
 # Asegúrate de que coincida con el puerto en tu aplicación Express.js
-EXPOSE 8080
+EXPOSE 80
 
 CMD ["npm", "start"]

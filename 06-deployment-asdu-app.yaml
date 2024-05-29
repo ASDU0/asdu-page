@@ -17,6 +17,6 @@ spec:
         - name: asdu-app-container
           image: localhost:5000/asdu-app:IMAGE_VERSION
           ports:
-            - containerPort: 80
+            - containerPort: 3000
 
             

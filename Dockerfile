@@ -1,13 +1,8 @@
-FROM node:14
 
-WORKDIR /usr/src/app
+FROM nginx:alpine
 
-COPY package*.json ./
+WORKDIR /usr/share/nginx/html
+
 COPY . .
 
-RUN npm install
-
-# Asegúrate de que coincida con el puerto en tu aplicación Express.js
 EXPOSE 80
-
-CMD ["npm", "start"]

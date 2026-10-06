@@ -1,0 +1,22 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    uses: EPIIS/unsaac-devops-templates/.github/workflows/reusable-deploy.yml@feature/thesis-reusable-deploy-v2
+    with:
+      projectName: asdu
+      appName: frontend
+      buildContext: .
+      dockerfile: Dockerfile
+      containerPort: "8080"
+      servicePort: "80"
+      ingressEnabled: true
+      ingressPath: /asdu
+      internalPath: /
+    secrets:
+      SSH_PASSWORD: ${{ secrets.EPIIS_SSH_PASSWORD }}

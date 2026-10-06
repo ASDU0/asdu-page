@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - main
+      - develop
 
 jobs:
   deploy:
@@ -13,7 +13,7 @@ jobs:
       appName: frontend
       buildContext: .
       dockerfile: Dockerfile
-      containerPort: "8080"
+      containerPort: "80"
       servicePort: "80"
       ingressEnabled: true
       ingressPath: /asdu
